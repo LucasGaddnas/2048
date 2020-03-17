@@ -1,0 +1,27 @@
+body {
+    background-color: darkslategray;
+}
+#board {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 6pt;
+    border: solid;
+    border-width: 6pt;
+    border-radius: 5pt;
+    border-color: black;
+    background-color: black;
+}
+.boardsqr {
+    background-color: rgb(37, 70, 70);
+    border-radius: 5pt;
+}
+.pointsqr {
+    position: absolute;
+    background-color: wheat;
+    border-radius: 3pt;
+}

@@ -3,7 +3,7 @@ var squareSize = 60;
 var boardPoints = math.zeros(boardSize, boardSize);
 
 //#setting up the board
-function createBoard() {
+const createBoard = function() {
 
     //creates the squares on the board
     for (let i = 0; i < Math.pow(boardSize, 2); i++) {
@@ -20,7 +20,7 @@ function createBoard() {
     }
 }
 
-function newPoint() {
+const newPoint = function() {
     //creates a new point
     let point = document.createElement("div");
     point.setAttribute("class", "pointsqr");
@@ -41,25 +41,38 @@ function newPoint() {
     }
 }
 
-document.addEventListener("keydown", function(event) {
-    switch (event.keyCode) {
-        case 37: //left
-
-            break;
-        case 38: //up
-
-            break;
-        case 39: //right
-
-            break;
-        case 40: //down
-
-            break;
-    }
-});
+const movePointsv = function(direction) {
+    boardPoints.forEach(function(value, index) {
+        if (value > 0) {
+            /*while (index == 0) {
+                index.push(index[0, 0]);
+            }*/
+            console.log(index);
+        }
+    })
+}
 
 window.onload = function() {
     this.createBoard();
     this.newPoint();
     this.newPoint();
 }
+
+document.addEventListener("keydown", function(event) {
+    switch (event.keyCode) {
+        case 37: //left
+            movePoints("left");
+            newPoint();
+            break;
+        case 38: //up
+            newPoint();
+            break;
+        case 39: //right
+            movePoints("right");
+            newPoint();
+            break;
+        case 40: //down
+            newPoint();
+            break;
+    }
+});
