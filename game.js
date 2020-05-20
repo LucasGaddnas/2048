@@ -53,9 +53,9 @@ const movePointsv = function(direction) {
 }
 
 window.onload = function() {
-    this.createBoard();
-    this.newPoint();
-    this.newPoint();
+    createBoard();
+    newPoint();
+    newPoint();
 }
 
 document.addEventListener("keydown", function(event) {
